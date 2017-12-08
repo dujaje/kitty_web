@@ -1,2 +1,137 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<% @title = "Kitty" %>
+
+<div class="body-space">
+    <div id="header-section">
+      <div class="marketing-message">
+        <div class="content">
+          <div style="padding-left: 50px;">
+            <h1 class="no-margin color-primary">Kitty</h1>
+            <h2 class="no-margin">Control group spending, right inside your chats</h2>
+          </div>
+        </div>
+      </div>
+      <div class="image-area">
+        <%= image_tag 'demo-app-1' %>
+      </div>
+    </div>
+
+    <div id="group-chat-section">
+      <div class="content-card">
+        <div class="image-area">
+          <%= image_tag 'demo-app-2' %>
+        </div>
+        <div class="marketing-message">
+          <div class="content text-center">
+            <h2 class="no-margin">Built Into Your Groups</h2>
+            <hr>
+            <p class="no-margin">Messaging apps are the home of groups online. Therefore, we have integrated group spending straight into your groups chats. Available now as a Facebook Messenger Extension and in other messaging apps soon.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="features-section">
+      <div class="content-card">
+          <div class="content text-center">
+            <h2 class="no-margin">Features</h2>
+            <hr>
+            <div class="features-section">
+              <div class="feature-area">
+                <i class="fa fa-tasks color-primary" style="font-size:90px; margin-top:17.5px;" aria-hidden="true"></i>
+                <h4>Simplifies repayments</h4>
+                <p>Kitty does all the maths so you don't have to. She will then show you the quickest way to pay everyone back.</p>
+              </div>
+              <div class="feature-area">
+                <i class="fa fa-tachometer color-primary" style="font-size:100px;" aria-hidden="true"></i>
+                <h4>Track your financial situation</h4>
+                <p>Provides users a dashboard to keep track of all their spending across groups, their outstanding debts and more.</p>
+              </div>
+              <div class="feature-area">
+                <i class="fa fa-commenting color-primary" style="font-size:100px;" aria-hidden="true"></i>
+                <h4>Reminds people to pay back</h4>
+                <p>As Kitty is built directly into your group chats, it can automatically send messages reminding people to pay you back or updating you on the new situation.</p>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+
+    <div id="no-download-section">
+      <div class="content-card">
+        <div class="marketing-message">
+          <div class="content text-center">
+            <h2 class="no-margin">No need to download</h2>
+            <hr>
+            <p class="no-margin">Kitty is a web platform. As it is built into your messaging apps, there is no need to download extra apps or take up space on your device! Just chatting to Kitty on Facebook Messenger will get you started.</p>
+          </div>
+        </div>
+        <div class="image-area">
+          <%= image_tag 'demo-app-3' %>
+        </div>
+      </div>
+    </div>
+
+    <div id="contact-section">
+      <div class="content-card">
+          <div class="content text-center">
+            <h2 class="no-margin">Get in Touch</h2>
+            <hr>
+            <div class="contact-form">
+              <%= simple_form_for @contact, :html => {:class => 'form-horizontal' } do |f| %>
+                <%= f.input :name, :required => true, :label => false, placeholder: "Your Name" %>
+                <%= f.input :email, :required => true, :label => false, placeholder: "Your Email" %>
+                <%= f.input :message, :as => :text, :required => true, :label => false, placeholder: "Your Message"  %>
+                <div class= "hidden">
+                  <%= f.input :nickname, :hint => 'Leave this field blank!' %>
+                </div>
+                <div>
+                  </br>
+                  <%= f.button :submit, 'Send message', :class=> "btn btn-pill btn-primary btn-block" %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+      </div>
+    </div>
+</div>
+
+<div class="footer-home">
+  <footer class="flex-rw">
+      <ul class="footer-list-top">
+        <li><h4 class="footer-list-header">About Kitty</h4></li>
+        <li><a href='#' class="generic-anchor footer-list-anchor" itemprop="significantLink">Get to know us</a></li>
+        <li><a href='#' itemprop="significantLink" class="generic-anchor footer-list-anchor">Join the team</a></li>
+        <li><a href='#' class="generic-anchor footer-list-anchor" itemprop="significantLink">Events</a></li>
+      </ul>
+      <ul class="footer-list-top">
+        <li><h4 class="footer-list-header">Our Favourite Kittys</h4></li>
+        <li><a href='https://www.instagram.com/galileo.the.cat/' class="generic-anchor footer-list-anchor">Galileo</a></li>
+      </ul>
+      <ul class="footer-list-top">
+        <li id='help'><h4 class="footer-list-header">Please Help Me</h4></li>
+        <li><a href='#contact-section' class="generic-anchor footer-list-anchor" itemprop="significantLink">Contact</a></li>
+        <li><a href='#' class="generic-anchor footer-list-anchor" itemprop="significantLink">FAQ</a></li>
+        <li><a href="/terms-of-use.html" class="generic-anchor" rel="nofollow">Terms</a><span style="color:white; opacity:0.7;"> | </span><a href="https://pp.botscrew.com/privacy-policy/579" class="generic-anchor" rel="nofollow">Privacy</a></li>
+      </ul>
+
+    <section class="footer-social-section flex-rw">
+        <span class="footer-social-overlap footer-social-connect">
+        CONNECT <span class="footer-social-small">with</span> US
+        </span>
+        <span class="footer-social-overlap footer-social-icons-wrapper">
+        <a href="#" class="generic-anchor" target="_blank" title="Pinterest" itemprop="significantLink"><i class="fa fa-pinterest"></i></a>
+        <a href="#" class="generic-anchor" target="_blank" title="Facebook" itemprop="significantLink"><i class="fa fa-facebook"></i></a>
+        <a href="#" class="generic-anchor" target="_blank" title="Twitter" itemprop="significantLink"><i class="fa fa-twitter"></i></a>
+        <a href="#" class="generic-anchor" target="_blank" title="Instagram" itemprop="significantLink"><i class="fa fa-instagram"></i></a>
+        <a href="#" class="generic-anchor" target="_blank" title="Youtube" itemprop="significantLink"><i class="fa fa-youtube"></i></a>
+        <a href="#" class="generic-anchor" target="_blank" title="Google Plus" itemprop="significantLink"><i class="fa fa-google-plus"></i></a>
+        </span>
+    </section>
+
+    <section class="footer-bottom-section text-center">
+      <div class="footer-bottom-wrapper text-center">
+        <p style="font-size:10px;"><i class="fa fa-copyright" role="copyright"></i> Made 2017 Somewhere, over the Rainbow by adorable Kittens - All Rights Reserved - </p>
+      </div>
+    </section>
+  </footer>
+</div>
