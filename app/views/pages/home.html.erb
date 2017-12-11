@@ -29,7 +29,7 @@
       </div>
     </div>
 
-    <div id="features-section">
+    <div id="features-section-mobile">
       <div class="content-card">
         <div class="content text-center">
           <h2 class="no-margin">Features</h2>
@@ -64,7 +64,7 @@
   </div>
 
   <!-- DESKTOP -->
-  <div class="hidden-xs">
+  <div class="hidden-xs hidden-sm">
     <div id="header-section">
       <div class="marketing-message">
         <div class="content">
@@ -139,67 +139,14 @@
 <!-- CONTACT SECTION (MOBILE AND DESKTOP) -->
   <div id="contact-section">
       <div class="content-card">
-        <div class="content text-center">
-          <h2 class="no-margin">Get in Touch</h2>
-          <hr>
-          <div class="contact-form">
-            <%= simple_form_for @contact, :html => {:class => 'form-horizontal' } do |f| %>
-            <%= f.input :name, :required => true, :label => false, placeholder: "Your Name" %>
-            <%= f.input :email, :required => true, :label => false, placeholder: "Your Email" %>
-            <%= f.input :message, :as => :text, :required => true, :label => false, placeholder: "Your Message"  %>
-            <div class= "hidden">
-              <%= f.input :nickname, :hint => 'Leave this field blank!' %>
-            </div>
-            <div>
-            </br>
-            <%= f.button :submit, 'Send message', :class=> "btn btn-pill btn-primary btn-block" %>
-          </div>
-          <% end %>
-        </div>
+        <%= render 'shared/basic-contact-form' %>
       </div>
     </div>
 
+
 </div>
 
+<div style="height:50px;"></div>
 
 <!-- Footer Section -->
-<div class="footer-home">
-  <footer class="flex-rw">
-      <ul class="footer-list-top">
-        <li><h4 class="footer-list-header">About Kitty</h4></li>
-        <li><a href='#' class="generic-anchor footer-list-anchor" itemprop="significantLink">Get to know us</a></li>
-        <li><a href='#' itemprop="significantLink" class="generic-anchor footer-list-anchor">Join the team</a></li>
-        <li><a href='#' class="generic-anchor footer-list-anchor" itemprop="significantLink">Events</a></li>
-      </ul>
-      <ul class="footer-list-top">
-        <li><h4 class="footer-list-header">Our Favourite Kittys</h4></li>
-        <li><a href='https://www.instagram.com/galileo.the.cat/' class="generic-anchor footer-list-anchor">Galileo</a></li>
-      </ul>
-      <ul class="footer-list-top">
-        <li id='help'><h4 class="footer-list-header">Please Help Me</h4></li>
-        <li><a href='#contact-section' class="generic-anchor footer-list-anchor" itemprop="significantLink">Contact</a></li>
-        <li><a href='#' class="generic-anchor footer-list-anchor" itemprop="significantLink">FAQ</a></li>
-        <li><a href="/terms-of-use.html" class="generic-anchor" rel="nofollow">Terms</a><span style="color:white; opacity:0.7;"> | </span><a href="https://pp.botscrew.com/privacy-policy/579" class="generic-anchor" rel="nofollow">Privacy</a></li>
-      </ul>
-
-    <section class="footer-social-section flex-rw">
-        <span class="footer-social-overlap footer-social-connect">
-        CONNECT <span class="footer-social-small">with</span> US
-        </span>
-        <span class="footer-social-overlap footer-social-icons-wrapper">
-        <a href="#" class="generic-anchor" target="_blank" title="Pinterest" itemprop="significantLink"><i class="fa fa-pinterest"></i></a>
-        <a href="#" class="generic-anchor" target="_blank" title="Facebook" itemprop="significantLink"><i class="fa fa-facebook"></i></a>
-        <a href="#" class="generic-anchor" target="_blank" title="Twitter" itemprop="significantLink"><i class="fa fa-twitter"></i></a>
-        <a href="#" class="generic-anchor" target="_blank" title="Instagram" itemprop="significantLink"><i class="fa fa-instagram"></i></a>
-        <a href="#" class="generic-anchor" target="_blank" title="Youtube" itemprop="significantLink"><i class="fa fa-youtube"></i></a>
-        <a href="#" class="generic-anchor" target="_blank" title="Google Plus" itemprop="significantLink"><i class="fa fa-google-plus"></i></a>
-        </span>
-    </section>
-
-    <section class="footer-bottom-section text-center">
-      <div class="footer-bottom-wrapper text-center">
-        <p style="font-size:10px;"><i class="fa fa-copyright" role="copyright"></i> Made 2017 Somewhere, over the Rainbow by adorable Kittens - All Rights Reserved - </p>
-      </div>
-    </section>
-  </footer>
-</div>
+<%= render 'shared/footer' %>
